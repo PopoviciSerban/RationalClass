@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,32 @@ namespace NumereRationale
     {
         static void Main(string[] args)
         {
+            Rational a = new Rational(3, 2);
+            Rational b = new Rational(1, 4);
+            Rational c;
+
+            Console.WriteLine("a = {0}", a);
+            Console.WriteLine("b = {0}", b);
+
+            c = a + b;
+            Console.WriteLine("a + b = {0}", c);
+
+            c = a - b;
+            Console.WriteLine("a - b = {0}", c);
+
+            c = a * b;
+            Console.WriteLine("a * b = {0}", c);
+
+            c = a / b;
+            Console.WriteLine("a / b = {0}", c);
+
+            Console.Write("Give the power value: ");
+            int power = int.Parse(Console.ReadLine());
+            c = a ^ power;
+            Console.WriteLine("a ^ {0} = {1}", power, c);
+
+            Console.ReadKey();
+
         }
     }
 
@@ -216,5 +242,7 @@ namespace NumereRationale
 
             return false;
         }
+
+        public override string ToString() => $"{num} / {den}";
     }
 }
